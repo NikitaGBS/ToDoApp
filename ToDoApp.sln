@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# 
+#
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EF10D770-FC6A-4F25-98E9-8B62CBC2864F}"
 	ProjectSection(SolutionItems) = preProject
 		compose.yaml = compose.yaml
@@ -15,6 +15,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Data", "src\ToDoApp.Data\ToDoApp.Data.csproj", "{42FFCD16-D9A7-4628-AB41-CD70B3510E77}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Messaging", "src\ToDoApp.Messaging\ToDoApp.Messaging.csproj", "{3A6140A0-2969-4DFE-B700-DC1B4A0FBF0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Consumer", "src\ToDoApp.Consumer\ToDoApp.Consumer.csproj", "{EE5B324D-3AFD-4F57-8896-0D8658A4604C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,11 +40,16 @@ Global
 		{3A6140A0-2969-4DFE-B700-DC1B4A0FBF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A6140A0-2969-4DFE-B700-DC1B4A0FBF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A6140A0-2969-4DFE-B700-DC1B4A0FBF0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE5B324D-3AFD-4F57-8896-0D8658A4604C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE5B324D-3AFD-4F57-8896-0D8658A4604C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE5B324D-3AFD-4F57-8896-0D8658A4604C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE5B324D-3AFD-4F57-8896-0D8658A4604C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A2D7F61D-7E13-433B-A281-FEC8CF5E7279} = {FB316198-0CC7-4DCE-B951-692E53067192}
 		{CFA1BFFA-D836-410F-B309-AA92538C1B0D} = {FB316198-0CC7-4DCE-B951-692E53067192}
 		{42FFCD16-D9A7-4628-AB41-CD70B3510E77} = {FB316198-0CC7-4DCE-B951-692E53067192}
 		{3A6140A0-2969-4DFE-B700-DC1B4A0FBF0E} = {FB316198-0CC7-4DCE-B951-692E53067192}
+		{EE5B324D-3AFD-4F57-8896-0D8658A4604C} = {FB316198-0CC7-4DCE-B951-692E53067192}
 	EndGlobalSection
 EndGlobal

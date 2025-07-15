@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ToDoApp.Data;
 using ToDoApp.Data.Entities;
+using ToDoApp.Messaging;
+using ToDoApp.Messaging.Models;
 
 namespace ToDoApp.API.Controllers;
 
@@ -10,10 +12,11 @@ namespace ToDoApp.API.Controllers;
 public class ToDoController : ControllerBase
 {
     private readonly AppDbContext _context;
-
-    public ToDoController(AppDbContext context)
+    private readonly KafkaProducer _kafkaProducer;
+    public ToDoController(AppDbContext context, KafkaProducer kafkaProducer)
     {
         _context = context;
+        _kafkaProducer = kafkaProducer;
     }
 
     [HttpGet("list")]
@@ -25,6 +28,15 @@ public class ToDoController : ControllerBase
     {
         _context.TodoItems.Add(item);
         await _context.SaveChangesAsync();
+
+        await _kafkaProducer.ProduceAsync(KafkaTopics.TodoCreated, new TodoCreatedEvent
+        {
+            DateTime = item.DateTime,
+            Id = item.Id,
+            IsCompleted = item.IsCompleted,
+            Title = item.Title
+        });
+        
         return CreatedAtAction(nameof(GetById), new { id = item.Id }, item);
     }
     
