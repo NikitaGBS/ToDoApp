@@ -31,7 +31,6 @@ public class KafkaConsumer : IKafkaConsumer
         }
         catch (OperationCanceledException)
         {
-            _consumer.Close();
         }
     }
 
